@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: burlywood;
+}
+nav{
+    width: 100vw;
+    height: 75px;
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a{
+
+    color: #0099CC;
+    /* Eliminar color de fondo */
+    background: transparent;
+    /* Grosor del borde, estilo de línea y color */
+    border: 2px solid #0099CC;
+    /* Añadir esquinas curvadas */
+    border-radius: 6px;
+    /* Poner texto en mayúsculas */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    flex-wrap: nowrap;
+    display: inline-block;
+}
+nav a {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+/* Al poner el curso encima (hover) */
+nav a:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+input #submit{
+    color: #0099CC;
+    /* Eliminar color de fondo */
+    background: transparent;
+    /* Grosor del borde, estilo de línea y color */
+    border: 2px solid #0099CC;
+    /* Añadir esquinas curvadas */
+    border-radius: 6px;
+    /* Poner texto en mayúsculas */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+imput #submit {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+/* Al poner el curso encima (hover) */
+input #submit:hover {
+    background-color: #008CBA;
+    color: white;
+}
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.button span:after {
+    content: '\00bb';  /* Entidades CSS. Para usar entidades HTML, use &#8594;*/
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.button:hover span {
+    padding-right: 25px;
+}
+/* https://javifont.medium.com/gu%C3%ADa-r%C3%A1pida-para-estilos-css-en-botones-4eaca81ad32a
+*/
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
