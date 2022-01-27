@@ -26,9 +26,10 @@ class Metodos{
         $fichero1= opendir($ruta);
         echo "<ul>";
         while(($archivos = readdir($fichero1)) ) {
-            echo "<li>".$archivos."</li>";
-            //echo "<img src=imagenes/$archivos>";
-
+            if ($archivos != "." && $archivos != "..") {
+                echo "<li>" . $archivos . "</li>";
+                //echo "<img src=imagenes/$archivos>";
+            }
         }
         echo "</ul>";
         closedir($fichero1);
@@ -37,9 +38,9 @@ class Metodos{
         $fichero1= opendir($ruta);
 
         while(($archivos = readdir($fichero1)) ) {
-
-            echo "<img src=imagenes/$archivos>";
-
+            if ($archivos != "." && $archivos != "..") {
+                echo "<img src=imagenes/$archivos>";
+            }
         }
 
         closedir($fichero1);

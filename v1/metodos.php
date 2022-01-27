@@ -26,9 +26,10 @@ class Metodos{
         $fichero1= opendir($ruta);
         echo "<ul>";
         while(($archivos = readdir($fichero1)) ) {
-            echo "<li>".$archivos."</li>";
-            //echo "<img src=imagenes/$archivos>";
-
+            if ($archivos != "." && $archivos != "..") {
+                echo "<li>" . $archivos . "</li>";
+                //echo "<img src=imagenes/$archivos>";
+            }
         }
         echo "</ul>";
         closedir($fichero1);
@@ -37,8 +38,10 @@ class Metodos{
         $fichero1= opendir($ruta);
 
         while(($archivos = readdir($fichero1)) ) {
+            if ($archivos != "." && $archivos != "..") {
+                echo "<img src=imagenes/$archivos>";
+            }
 
-            echo "<img src=imagenes/$archivos>";
 
         }
 
@@ -69,7 +72,7 @@ class Metodos{
                         //Mostramos el mensaje de que se ha subido co éxito
                         echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
                         //Mostramos la imagen subida
-                        echo '<p><img src="imagenes/' . $archivo . '"></p>';
+                        //echo '<p><img src="imagenes/' . $archivo . '"></p>';
                     } else {
                         //Si no se ha podido subir la imagen, mostramos un mensaje de error
                         echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';

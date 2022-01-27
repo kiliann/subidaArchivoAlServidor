@@ -22,28 +22,32 @@ class Metodos
             }
         }
     }
-
+    //recorremos la carpeta para mostrar todos los nombres de los ficheros
     function leerFicheros($ruta)
     {
+        //aqui abrimos el directorio
         $fichero1 = opendir($ruta);
         echo "<ul>";
+        //recorremos los archivos y mostramos sus nombres.
         while (($archivos = readdir($fichero1))) {
-            echo "<li>" . $archivos . "</li>";
-            //echo "<img src=imagenes/$archivos>";
-
+            if ($archivos != "." && $archivos != "..") {
+                echo "<li>" . $archivos . "</li>";
+                //echo "<img src=imagenes/$archivos>";
+            }
         }
         echo "</ul>";
+        //cerramos el fichero.
         closedir($fichero1);
     }
-
+    //Aqui hacemos lo mismo pero abriendo las imagenes.
     function mostrarImagenes($ruta)
     {
         $fichero1 = opendir($ruta);
 
         while (($archivos = readdir($fichero1))) {
-
-            echo "<img src=imagenes/$archivos>";
-
+            if ($archivos != "." && $archivos != "..") {
+                echo "<img src=imagenes/$archivos>";
+            }
         }
 
         closedir($fichero1);
@@ -96,7 +100,7 @@ class Metodos
                 //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
                 if (!((strpos($tipo, "pdf")) && ($tamano < 2000000))) {
                     echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
-        - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.</b></div>';
+        - Se permiten archivos .pdf y de 200 kb como máximo.</b></div>';
                 } else {
                     //Si la imagen es correcta en tamaño y tipo
                     //Se intenta subir al servidor
@@ -104,7 +108,7 @@ class Metodos
                         //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
                         //chmod('images/'.$archivo, 0777);
                         //Mostramos el mensaje de que se ha subido co éxito
-                        echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
+                        echo '<div><b>Se ha subido correctamente el archivo pdf.</b></div>';
                         //Mostramos la imagen subida
                        // echo '<p><img src="imagenes/' . $archivo . '"></p>';
                     } else {
