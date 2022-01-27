@@ -20,9 +20,9 @@ $metodos = new Metodos();
     <a href="subirPdf.php">Subir PDF</a>
 </nav>
 
-<div class="contenido">
+<div class="imagenes">
     <?php
-    $metodos->leerFicheros("imagenes");
+    $metodos->mostrarImagenes("imagenes");
     ?>
 </div>
 
