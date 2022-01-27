@@ -17,6 +17,7 @@ $metodos = new Metodos();
     <a href="index.php">Subir Imágenes</a>
     <a href="verNombreImagenes.php"> Ver nombre de la imagen</a>
     <a href="verImagenes.php">Ver Imágenes</a>
+    <a href="subirPdf.php">Subir PDF</a>
 </nav>
 
 <?php
