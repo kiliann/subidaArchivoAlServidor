@@ -20,7 +20,7 @@ require_once "metodos.php";
 </nav>
 
 <div>
-
+    <h1>Subir Imagenes</h1><br/>
 <form method="post" enctype="multipart/form-data" action="#">
     <label>Subier Imagenes</label>
    <!-- <input name="nombre" type="text" placeholder="Nombre de la Imagen" required><br/>-->

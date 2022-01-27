@@ -1,7 +1,7 @@
 
 <?php
 require_once "metodos.php";
- $metodos = new Metodos();
+$metodos = new Metodos();
 ?><!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,18 +21,14 @@ require_once "metodos.php";
 </nav>
 
 <div>
-<h1>Subir Imagenes</h1><br/>
-<form method="post" enctype="multipart/form-data" action="#">
-    <label>Subir Imagenes</label>
-   <!-- <input name="nombre" type="text" placeholder="Nombre de la Imagen" required><br/>-->
-    <input type="file" name="imagenes"><br/>
-    <input type="submit" id="submit" value="Subir">
-</form>
-
+    <h1>Subir PDF</h1><br/>
+    <form method="post" enctype="multipart/form-data" action="#">
+        <label>Subir PDF</label>
+        <!-- <input name="nombre" type="text" placeholder="Nombre de la Imagen" required><br/>-->
+        <input type="file" name="pdf"><br/>
+        <input type="submit" id="submit" value="Subir">
+    </form>
+    <?php
+    $metodos->subidaPDF();
+    ?>
 </div>
-<?php
-    $metodos->subidaControladaImagenes();
-
-?>
-</body>
-</html>

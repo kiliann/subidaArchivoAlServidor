@@ -3,7 +3,8 @@
 
 
 
-class Metodos{
+class Metodos
+{
     //Realizamos un metodo para subir las images
     function subirImagenes()
     {
@@ -22,21 +23,24 @@ class Metodos{
         }
     }
 
-    function leerFicheros($ruta){
-        $fichero1= opendir($ruta);
+    function leerFicheros($ruta)
+    {
+        $fichero1 = opendir($ruta);
         echo "<ul>";
-        while(($archivos = readdir($fichero1)) ) {
-            echo "<li>".$archivos."</li>";
+        while (($archivos = readdir($fichero1))) {
+            echo "<li>" . $archivos . "</li>";
             //echo "<img src=imagenes/$archivos>";
 
         }
         echo "</ul>";
         closedir($fichero1);
     }
-    function mostrarImagenes($ruta){
-        $fichero1= opendir($ruta);
 
-        while(($archivos = readdir($fichero1)) ) {
+    function mostrarImagenes($ruta)
+    {
+        $fichero1 = opendir($ruta);
+
+        while (($archivos = readdir($fichero1))) {
 
             echo "<img src=imagenes/$archivos>";
 
@@ -79,6 +83,38 @@ class Metodos{
         }
     }
 
+    function subidaPDF()
+    {
+        if (isset($_FILES['pdf'])) {
+            $archivo = $_FILES['pdf']['name'];
+            //Si el archivo contiene algo y es diferente de vacio
+            if (isset($archivo) && $archivo != "") {
+                //Obtenemos algunos datos necesarios sobre el archivo
+                $tipo = $_FILES['pdf']['type'];
+                $tamano = $_FILES['pdf']['size'];
+                $temp = $_FILES['pdf']['tmp_name'];
+                //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+                if (!((strpos($tipo, "pdf")) && ($tamano < 2000000))) {
+                    echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
+        - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.</b></div>';
+                } else {
+                    //Si la imagen es correcta en tamaño y tipo
+                    //Se intenta subir al servidor
+                    if (move_uploaded_file($temp, 'pdfs/' . $archivo)) {
+                        //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+                        //chmod('images/'.$archivo, 0777);
+                        //Mostramos el mensaje de que se ha subido co éxito
+                        echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
+                        //Mostramos la imagen subida
+                       // echo '<p><img src="imagenes/' . $archivo . '"></p>';
+                    } else {
+                        //Si no se ha podido subir la imagen, mostramos un mensaje de error
+                        echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
+                    }
+                }
+            }
+        }
 
 
+    }
 }

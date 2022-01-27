@@ -69,7 +69,7 @@ class Metodos{
                         //Mostramos el mensaje de que se ha subido co éxito
                         echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
                         //Mostramos la imagen subida
-                        echo '<p><img src="imagenes/' . $archivo . '"></p>';
+                        //echo '<p><img src="imagenes/' . $archivo . '"></p>';
                     } else {
                         //Si no se ha podido subir la imagen, mostramos un mensaje de error
                         echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
