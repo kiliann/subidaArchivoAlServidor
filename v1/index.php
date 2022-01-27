@@ -22,7 +22,7 @@ require_once "metodos.php";
 
 <form method="post" enctype="multipart/form-data" action="#">
     <label>Subier Imagenes</label>
-    <input name="nombre" type="text" placeholder="Nombre de la Imagen" required><br/>
+   <!-- <input name="nombre" type="text" placeholder="Nombre de la Imagen" required><br/>-->
     <input type="file" name="imagenes"><br/>
     <input type="submit" id="submit" value="Subir">
 </form>
