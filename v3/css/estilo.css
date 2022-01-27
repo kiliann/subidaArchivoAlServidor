@@ -140,3 +140,21 @@ img{
     width: 300px;
     height: auto;
 }
+/*
+        Centrar contenido
+ */
+.contenido{
+    display: flex;
+    margin:100px auto;
+    justify-content: center;
+
+}
+div{
+
+    width: 500px;
+    height: 400px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: cornflowerblue;
+
+}

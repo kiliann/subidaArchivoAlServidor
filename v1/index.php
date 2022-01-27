@@ -1,7 +1,6 @@
-
 <?php
 require_once "metodos.php";
- $metodos = new Metodos();
+$metodos = new Metodos();
 ?><!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,20 +17,22 @@ require_once "metodos.php";
     <a href="verNombreImagenes.php"> Ver nombre de la imagen</a>
     <a href="verImagenes.php">Ver Imágenes</a>
 </nav>
+<div class="contenido">
+    <div>
+        <h1>Subir Imagenes</h1><br/>
+        <form method="post" enctype="multipart/form-data" action="#">
+            <label>Subier Imagenes</label>
+            <!-- <input name="nombre" type="text" placeholder="Nombre de la Imagen" required><br/>-->
+            <input type="file" name="imagenes"><br/>
+            <input type="submit" id="submit" value="Subir">
+        </form>
 
-<div>
-    <h1>Subir Imagenes</h1><br/>
-<form method="post" enctype="multipart/form-data" action="#">
-    <label>Subier Imagenes</label>
-   <!-- <input name="nombre" type="text" placeholder="Nombre de la Imagen" required><br/>-->
-    <input type="file" name="imagenes"><br/>
-    <input type="submit" id="submit" value="Subir">
-</form>
 
-</div>
 <?php
 
-    $metodos->subirImagenes();
+$metodos->subirImagenes();
 ?>
+    </div>
+</div>
 </body>
 </html>

@@ -1,7 +1,6 @@
-
 <?php
 require_once "metodos.php";
- $metodos = new Metodos();
+$metodos = new Metodos();
 ?><!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,19 +18,19 @@ require_once "metodos.php";
     <a href="verImagenes.php">Ver Imágenes</a>
     <a href="subirPdf.php">Subir PDF</a>
 </nav>
-
+<div class="contenido">
 <div>
-<h1>Subir Imagenes</h1><br/>
-<form method="post" enctype="multipart/form-data" action="#">
-    <label>Subir Imagenes</label>
-   <!-- <input name="nombre" type="text" placeholder="Nombre de la Imagen" required><br/>-->
-    <input type="file" name="imagenes"><br/>
-    <input type="submit" id="submit" value="Subir">
-</form>
-
+    <h1>Subir Imagenes</h1><br/>
+    <form method="post" enctype="multipart/form-data" action="#">
+        <label>Subir Imagenes</label>
+        <!-- <input name="nombre" type="text" placeholder="Nombre de la Imagen" required><br/>-->
+        <input type="file" name="imagenes"><br/>
+        <input type="submit" id="submit" value="Subir">
+    </form>
+</div>
 </div>
 <?php
-    $metodos->subidaControladaImagenes();
+$metodos->subidaControladaImagenes();
 
 ?>
 </body>
