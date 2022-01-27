@@ -4,6 +4,7 @@
 }
 body{
     background-color: burlywood;
+    align-items: center;
 }
 h1{
     font-weight: bold;
@@ -140,6 +141,7 @@ img{
     width: 300px;
     height: auto;
 }
+
 /*
         Centrar contenido
  */
@@ -149,7 +151,7 @@ img{
     justify-content: center;
 
 }
-div{
+.contenido div{
 
     width: 500px;
     height: 400px;
@@ -157,4 +159,9 @@ div{
     text-align: center;
     background-color: cornflowerblue;
 
+}
+.imagenes{
+    display: flex;
+    margin:100px auto;
+    justify-content: center;
 }
