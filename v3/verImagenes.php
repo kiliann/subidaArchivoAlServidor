@@ -19,11 +19,11 @@ $metodos = new Metodos();
     <a href="verImagenes.php">Ver Imágenes</a>
 </nav>
 
-<?php
-$metodos->mostrarImagenes("imagenes");
-?>
-
-
+<div class="contenido">
+    <?php
+    $metodos->leerFicheros("imagenes");
+    ?>
+</div>
 
 </body>
 </html>
