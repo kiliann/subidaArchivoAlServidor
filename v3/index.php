@@ -30,8 +30,8 @@ require_once "metodos.php";
 
 </div>
 <?php
+    $metodos->subidaControladaImagenes();
 
-    $metodos->subirImagenes();
 ?>
 </body>
 </html>
